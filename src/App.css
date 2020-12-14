@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    color: rgb(236, 228, 228);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+    height: 100vh;
+    display: flex;
+    background: #222222;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calculator {
+    height: 720px;
+    width: 480px;
+    background: #1f2123;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.result-part {
+    height: 20%;
+    display: grid;
+    grid-template-rows: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.input-value {
+    font-size: 19px;
+    color: #919191;
+    text-align: right;
+    margin: 20px 20px;
+    padding-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display-value {
+    margin: 0 20px;
+    font-size: 32px;
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+.calculation-part {
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+}
+
+.number,
+.operator {
+    cursor: pointer;
+}
+
+.number:focus,
+.empty:focus,
+.operator:focus {
+    outline: none;
+}
+
+.operator,
+.number,
+.empty {
+    width: 92px;
+    height: 92px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    background: none;
+}
+
+#divide {
+    background: #20b2aa;
+}
+
+#multiply {
+    background: #f08080;
+}
+
+#subtract {
+    background: #667d95;
+}
+
+#add {
+    background: #e75480;
+}
+
+#equals {
+    background: #b19cd9;
+}
+
+.number:hover {
+    background-color: grey;
 }
